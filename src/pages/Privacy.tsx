@@ -6,8 +6,9 @@ export default function Privacy() {
       <h2>Overview</h2>
       <p>
         iBellori ("iBellori," "we," "us," or "our") provides a subscription software service
-        that connects to the selling platforms you already use — currently Etsy — and turns
-        that information into dashboards, reports, and AI-assisted guidance for your shop.
+        that connects to the selling platforms you already use — currently Etsy and Shopify —
+        and turns that information into dashboards, reports, and AI-assisted guidance for your
+        shop.
         This policy explains what information we collect, how we use it, who we share it
         with, how long we keep it, and the choices you have.
       </p>
@@ -90,11 +91,56 @@ export default function Privacy() {
         rate limits.
       </p>
 
+      <h2>Shopify order information</h2>
+      <p>
+        Shopify is a connected commerce platform and the source of the store data you
+        authorise us to read. It is not one of our service providers. Your use of Shopify
+        remains governed by Shopify's own terms and privacy policy.
+      </p>
+      <p>
+        When you connect a Shopify store, we request read-only access and process only what
+        your dashboard needs: order numbers and identifiers, order dates, order totals and
+        currency, financial and fulfilment status, and line-item product titles and
+        quantities, together with a count of the products in your store.
+      </p>
+      <p>
+        <strong>
+          We do not request or store directly identifying customer fields. That means no
+          customer names, email addresses, telephone numbers, billing or shipping addresses,
+          and no Shopify customer profile records.
+        </strong>{" "}
+        Our Shopify app is not granted the customer-read permission, and the query we send to
+        Shopify contains no customer field. Order information tells us that an order happened,
+        what it was worth, what state it is in, and which of your products were in it — not
+        who placed it.
+      </p>
+      <p>
+        We use this information for one purpose: to render your own private analytics and
+        operational dashboard inside iBellori. We do not use it to build customer profiles, we
+        do not combine it across merchants, and we do not send it to our AI provider.
+      </p>
+
       <h2>Service providers we share information with</h2>
       <p>
         We share information only with the providers that make the service work, and only to
         the extent each one needs. We do not share your information with anyone else except
-        where required by law or as described below.
+        where required by law or as described below. Not every provider handles every kind of
+        data, so we say below which ones are involved in your connected Shopify store data and
+        which are not.
+      </p>
+      <p>
+        <strong>Providers involved in Shopify order information:</strong> Cloudflare sits in
+        front of the iBellori application as well as this website, so requests and responses —
+        including dashboard responses containing Shopify order information — pass through it
+        in transit. Render hosts the application, where Shopify order information is processed
+        in memory while your dashboard is built and is not written to storage. Neon stores
+        Shopify connection information and the encrypted access token, but does not store
+        Shopify order information.
+      </p>
+      <p>
+        <strong>Providers that receive no Shopify data:</strong> Anthropic, which powers the
+        AI-assisted features; Stripe, which handles billing; and Resend, which delivers
+        account email.
       </p>
       <ul>
         <li>
@@ -125,7 +171,8 @@ export default function Privacy() {
           password resets.
         </li>
         <li>
-          <strong>Cloudflare</strong> — hosting and delivery of this website.
+          <strong>Cloudflare</strong> — delivery of this website, and the proxy in front of
+          the iBellori application through which requests and responses pass.
         </li>
       </ul>
 
@@ -148,6 +195,25 @@ export default function Privacy() {
         logs are kept for a limited period for troubleshooting and abuse prevention.
       </p>
 
+      <p>
+        <strong>Shopify order information is not stored.</strong> It is read from Shopify when
+        your dashboard loads, aggregated in memory, held in a short-lived server cache of
+        approximately two minutes so the page stays responsive, and then discarded. No Shopify
+        order, line item, or order total is written to our database.
+      </p>
+      <p>
+        <strong>
+          Your Shopify connection is kept for longer, and is separate from order information.
+        </strong>{" "}
+        While a store is connected we retain the store domain, store name, Shopify store
+        identifier, and an access token encrypted at rest. When you disconnect a store, or when
+        the app is uninstalled from Shopify, the access token is erased immediately and the
+        connection is marked inactive. A record that the connection existed — the store domain,
+        store name, and the dates it was connected and disconnected — remains until Shopify
+        sends us a store redaction request, at which point the connection record is deleted in
+        full.
+      </p>
+
       <h2>Security</h2>
       <p>
         We take reasonable technical and organizational measures appropriate to the
@@ -157,8 +223,15 @@ export default function Privacy() {
         transmission is completely secure, but we work to protect your information
         appropriately and to correct problems promptly when we find them.
       </p>
+      <p>
+        Traffic between iBellori and a connected platform is encrypted in transit, as is
+        traffic between the application and its database. Access to a connected store is
+        restricted to the iBellori account that created it and is enforced in the database
+        query itself, so one account cannot read another account's connection. Responses
+        containing account data are marked as non-cacheable.
+      </p>
 
-      <h2>Disconnecting Etsy and deleting your data</h2>
+      <h2>Disconnecting a store and deleting your data</h2>
       <p>
         You can disconnect a shop from iBellori at any time from the Integrations page in the
         app, and you can also revoke iBellori's access from your Etsy account settings.
@@ -177,6 +250,21 @@ export default function Privacy() {
         withdraw a platform authorization at any time as described above. To exercise any of
         these rights, contact us using the address below. We will not treat you differently
         for exercising them.
+      </p>
+
+      <h2>Selling and sharing</h2>
+      <p>
+        We do not sell personal data, and we do not share it for cross-context behavioural
+        advertising, as those terms are defined under applicable privacy laws. We share
+        information only with the providers listed above, each for a single stated purpose.
+      </p>
+
+      <h2>Automated decision-making</h2>
+      <p>
+        iBellori's AI-assisted features produce guidance for you, the merchant, about your own
+        shop. We do not use personal data to make automated decisions that produce legal or
+        similarly significant effects concerning your customers. No customer is scored, ranked,
+        approved, declined, or profiled by iBellori.
       </p>
 
       <h2>Cookies and sessions</h2>

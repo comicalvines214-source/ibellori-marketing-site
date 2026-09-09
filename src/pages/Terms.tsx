@@ -37,7 +37,7 @@ export default function Terms() {
         platform's rules or any applicable law.
       </p>
 
-      <h2>Etsy authorization and third-party platforms</h2>
+      <h2>Platform authorization and connected commerce platforms</h2>
       <p>
         When you connect an Etsy shop, you authorize iBellori through Etsy's own consent
         screen to access the shop data needed to provide the Services. You confirm that you
@@ -190,6 +190,70 @@ export default function Terms() {
         top of this page whenever changes are made, and we will give notice of material changes
         through the Services or by email. Continuing to use the Services after a change takes
         effect means you accept the updated terms.
+      </p>
+
+      <h2>Data Processing Addendum</h2>
+      <p>
+        This Data Processing Addendum ("DPA") forms part of these Terms and governs iBellori's
+        processing of personal data contained in the platform data you authorise us to access.
+        Where these Terms and this DPA conflict on that processing, this DPA governs.
+      </p>
+      <p>
+        <strong>1. Roles.</strong> For personal data contained in connected platform data, you
+        are the controller and iBellori is the processor. We process that data only on your
+        instructions, which you give by connecting a store and using the service.
+      </p>
+      <p>
+        <strong>2. Duration.</strong> Processing of Shopify order information continues for as
+        long as the store is connected, and ends when you disconnect the store or uninstall the
+        app.
+      </p>
+      <p>
+        <strong>3. Categories of data.</strong> For a connected Shopify store: order numbers
+        and identifiers, order dates, order totals and currency, financial and fulfilment
+        status, and line-item product titles and quantities. iBellori does not request or
+        receive directly identifying customer fields — no customer names, email addresses,
+        telephone numbers, billing or shipping addresses, and no customer profile records.
+      </p>
+      <p>
+        <strong>4. Purpose limitation.</strong> iBellori processes this data solely to provide
+        your private analytics and operational dashboard. We do not process it for any other
+        purpose, do not sell it, and do not share it for advertising. Shopify order information
+        is not sent to our AI provider.
+      </p>
+      <p>
+        <strong>5. Connected platforms and sub-processors.</strong> Shopify and Etsy are
+        connected commerce platforms and the sources of the data you authorise; they are not
+        our sub-processors. Our sub-processors for connected Shopify store data are Cloudflare,
+        which sits in front of the application so responses pass through it in transit; Render,
+        which hosts the application and processes order information in memory; and Neon. Neon
+        stores Shopify connection information and the encrypted access token, but does not
+        store Shopify order information. Anthropic, Stripe and Resend receive no Shopify data.
+      </p>
+      <p>
+        <strong>6. Security.</strong> Traffic to a connected platform and to the database is
+        encrypted in transit. Platform access tokens are encrypted at rest using AES-256-GCM.
+        Access to a connection is restricted to the owning account and enforced in the database
+        query. Responses containing account data are marked non-cacheable.
+      </p>
+      <p>
+        <strong>7. Retention and deletion.</strong> Shopify order information is processed
+        transiently and is not persisted; a short-lived cache expires within approximately two
+        minutes. On disconnection or uninstall, the access token is erased and the connection is
+        marked inactive. The remaining connection metadata — store domain, store name, and
+        connection dates — is retained until Shopify sends a store redaction request, at which
+        point the connection record is deleted in full.
+      </p>
+      <p>
+        <strong>8. Customer privacy requests.</strong> iBellori implements Shopify's mandatory
+        compliance webhooks. Because no Shopify customer personal data is stored, a customer
+        data request has nothing to disclose and a customer redaction request has nothing to
+        erase; a store redaction request deletes the connection record.
+      </p>
+      <p>
+        <strong>9. Your instructions.</strong> If you require us to stop processing a connected
+        store's data, disconnecting the store in the application gives that instruction and
+        takes effect immediately.
       </p>
 
       <h2>Contact us</h2>
